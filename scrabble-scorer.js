@@ -42,9 +42,9 @@ function simpleScorer(word) {
    return Number(word.length);
  }
 
+let vowels = "AEIOU"; // and Sometimes Y
 function vowelBonusScorer(word) {
    word = word.toUpperCase();
-	let vowels = "AEIOU";
    let score = 0;
    for (char in word) {
       if (vowels.includes(word[char])) {
@@ -96,6 +96,14 @@ function initialPrompt() {
 function scorerPrompt() {
    let scoreChoice = Number(input.question("\nWhich scoring algorithm would you like to use? \n0- Simple: One point per character \n1- Vowel Bonus: Vowels are worth 3 points \n2- Scrabble: Uses scrabble point system \n\nEnter 0, 1, or 2: "));
 
+   if (scoreChoice === 1) {
+      let andSometimesY = input.question("Would you like to count Y as a vowel? ");
+
+      if (andSometimesY.toUpperCase() === "Y") {
+         vowels += "Y";
+      }
+   }
+   
    return scoringAlgorithms[scoreChoice];
 }
 
@@ -105,7 +113,7 @@ function runProgram() {
    console.log(`Score for "${userWord}": ${scoreAlgo.scorerFunction(userWord)}`);
 }
 
-//runProgram();
+runProgram();
 
 // Don't write any code below this line //
 // And don't change these or your program will not run as expected //
