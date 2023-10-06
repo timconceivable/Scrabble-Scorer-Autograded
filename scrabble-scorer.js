@@ -64,7 +64,7 @@ function scrabbleScorer(word) {
 }
 
 // your job is to finish writing these functions and variables that we've named //
-// don't change the names or your program won't work as expected. //
+// don't change the names or your program won't work as expected. EXCEPT you can't name the variables the same name as the function which is what the instructions lead you to believe. so you DO have to rename these variables.//
 
 let simple = {
    name: "Simple Score",
@@ -105,16 +105,7 @@ function runProgram() {
    console.log(`Score for "${userWord}": ${scoreAlgo.scorerFunction(userWord)}`);
 }
 
-/* console.log("letter a: ", newPointStructure.a);
-console.log("letter b: ", newPointStructure.b);
-console.log("letter j: ", newPointStructure.j);
-console.log("letter j: ", newPointStructure.q);
-console.log("letter z: ", newPointStructure.z);
-console.log(newPointStructure); */
-/* console.log(typeof newPointStructure.b);
-console.log(typeof newPointStructure.j);
-console.log(typeof newPointStructure.q); */
-// runProgram();
+//runProgram();
 
 // Don't write any code below this line //
 // And don't change these or your program will not run as expected //
