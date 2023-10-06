@@ -37,13 +37,16 @@ function oldScrabbleScorer(word) {
  };
  
 let newPointStructure = transform(oldPointStructure);
- 
-function simpleScorer(word) {
+
+
+// your job is to finish writing these functions and variables that we've named. don't change the names or your program won't work as expected.  INSTRUCTIONS UNCLEAR
+
+let simpleScorer = function(word) {
    return Number(word.length);
  }
 
 let vowels = "AEIOU"; // and Sometimes Y
-function vowelBonusScorer(word) {
+let vowelBonusScorer = function(word) {
    word = word.toUpperCase();
    let score = 0;
    for (char in word) {
@@ -54,7 +57,7 @@ function vowelBonusScorer(word) {
    return score;
 }
 
-function scrabbleScorer(word) {
+let scrabbleScorer = function(word) {
    let score = 0;
    for (let index in word) {
       letter = word[index];
@@ -63,28 +66,23 @@ function scrabbleScorer(word) {
    return score;
 }
 
-// your job is to finish writing these functions and variables that we've named //
-// don't change the names or your program won't work as expected. EXCEPT you can't name the variables the same name as the function which is what the instructions lead you to believe. so you DO have to rename these variables.//
-
-let simple = {
-   name: "Simple Score",
-   description: "Each letter is worth 1 point.",
-   scorerFunction: simpleScorer
-};
-
-let vowelBonus = {
-   name: "Bonus Vowels",
-   description: "Vowels are 3 pts, consonants are 1 pt.",
-   scorerFunction: vowelBonusScorer
-};
-
-let scrabble = {
-   name: "Scrabble",
-   description: "The traditional scoring algorithm.",
-   scorerFunction: scrabbleScorer
-};
-
-const scoringAlgorithms = [simple, vowelBonus, scrabble];
+const scoringAlgorithms = [
+   {
+      name: "Simple Score",
+      description: "Each letter is worth 1 point.",
+      scorerFunction: simpleScorer
+   },
+   {
+      name: "Bonus Vowels",
+      description: "Vowels are 3 pts, consonants are 1 pt.",
+      scorerFunction: vowelBonusScorer
+   },
+   {
+      name: "Scrabble",
+      description: "The traditional scoring algorithm.",
+      scorerFunction: scrabbleScorer
+   }
+];
 
 function initialPrompt() {
 
@@ -113,7 +111,7 @@ function runProgram() {
    console.log(`Score for "${userWord}": ${scoreAlgo.scorerFunction(userWord)}`);
 }
 
-// runProgram();
+//runProgram();
 
 // Don't write any code below this line //
 // And don't change these or your program will not run as expected //
