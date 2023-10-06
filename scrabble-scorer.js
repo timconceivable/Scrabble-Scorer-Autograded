@@ -113,7 +113,7 @@ function runProgram() {
    console.log(`Score for "${userWord}": ${scoreAlgo.scorerFunction(userWord)}`);
 }
 
-runProgram();
+// runProgram();
 
 // Don't write any code below this line //
 // And don't change these or your program will not run as expected //
